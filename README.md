@@ -1,6 +1,37 @@
-# Processador de Listas M3U
+# Aplicativo de Processamento de Arquivos M3U
 
-Este é um aplicativo modular para processar arquivos M3U, permitindo a organização de conteúdo como canais de TV, filmes, séries e conteúdos adultos. O projeto suporta armazenamento de dados em um banco de dados SQLite, além de geração de arquivos `.strm`.
+Este é um aplicativo modular para processar arquivos `.m3u`, permitindo a organização de conteúdos como canais de TV, filmes, séries e conteúdos adultos.  
+O projeto nasceu da minha necessidade de extrair e organizar conteúdos distribuídos em listas `.m3u` para uso com **Emby/Jellyfin**.
+
+## Funcionalidades
+
+- **Processamento Modular**: Diferentes tipos de conteúdo são gerenciados por processadores dedicados (canais de TV, filmes, séries e adultos).
+- **Geração de Arquivos `.strm`**: Cria arquivos `.strm` para cada item de mídia, permitindo fácil integração com servidores de mídia.
+- **Gerenciamento de Links**: Atualiza links obsoletos armazenados nos diretórios existentes.
+- **Banco de Dados SQLite**: Armazena metadados de mídia em um banco de dados SQLite, permitindo recuperação e organização futura.
+
+## Motivação
+
+Este projeto foi desenvolvido para facilitar a criação de arquivos `.strm` com listas `.m3u` que contêm diversos tipos de mídia. Com isso, você pode usufruir da sua lista para criar uma biblioteca de mídia personalizada, diretamente integrada ao **Emby** ou **Jellyfin**.
+
+## Uso
+
+1. **Processadores disponíveis:**
+
+   - Canais de TV
+   - Filmes
+   - Séries
+   - Conteúdo adulto
+
+2. **Saída:**
+   - Geração de diretórios organizados.
+   - Arquivos `.strm` para cada conteúdo identificado.
+   - Metadados salvos em um banco de dados SQLite.
+
+## Versão
+
+**Versão atual**: 1.0.0-beta  
+Este é um lançamento beta para testes. As buscas retornam grande parte dos conteúdos, mas ainda é necessário ampliar os padrões da regex para cobrir 100% dos casos.
 
 ## Estrutura do Projeto
 
