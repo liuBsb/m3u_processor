@@ -33,26 +33,6 @@ Este projeto foi desenvolvido para facilitar a criação de arquivos `.strm` com
 **Versão atual**: 1.0.0-beta  
 Este é um lançamento beta para testes. As buscas retornam grande parte dos conteúdos, mas ainda é necessário ampliar os padrões da regex para cobrir 100% dos casos.
 
-## Estrutura do Projeto
-
-```
-m3u-processor
-├── __init__.py
-├── main.py
-├── patterns
-│   ├── __init__.py
-│   └── patterns.py
-├── processor_factory.py
-├── processors
-│   ├── adult_processor.py
-│   ├── __init__.py
-│   ├── media_processor.py
-│   ├── movie_processor.py
-│   ├── series_processor.py
-│   └── tv_channel_processor.py
-└── README.md
-```
-
 ## Funcionalidades
 
 - Processamento de diferentes tipos de conteúdo: canais de TV, filmes, séries e conteúdo adulto.
@@ -75,6 +55,7 @@ m3u-processor
    ```
 
 2. Instale as dependências:
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -109,6 +90,7 @@ python main.py <tipo_de_processador> <arquivo_m3u> <diretorio_saida> [--db_path 
    ```
 
 3. Processar conteúdo adulto:
+
    ```bash
    python main.py adult input.m3u output_dir
    ```
@@ -124,6 +106,7 @@ Se você processou canais de TV com `--db_path`, pode consultar os dados salvos 
    ```
 
 2. Execute uma consulta:
+
    ```sql
    SELECT * FROM tv_channels;
    ```
@@ -163,9 +146,11 @@ Contribuições são bem-vindas! Por favor, siga estas etapas:
 
 1. Faça um fork do repositório.
 2. Crie uma branch para sua funcionalidade ou correção:
+
    ```bash
    git checkout -b minha-nova-funcionalidade
    ```
+
 3. Envie um pull request.
 
 ## Licença
