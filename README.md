@@ -1,12 +1,12 @@
 # Aplicativo de Processamento de Arquivos M3U
 
 Este é um aplicativo modular para processar arquivos `.m3u`, permitindo a organização de conteúdos como canais de TV, filmes, séries e conteúdos adultos.  
-O projeto nasceu da minha necessidade de extrair e organizar conteúdos distribuídos em listas `.m3u` para uso com **Emby/Jellyfin**.
+O projeto nasceu da necessidade de extrair e organizar conteúdos distribuídos em listas `.m3u` para uso com **Emby/Jellyfin**.
 
 ## Funcionalidades
 
 - **Processamento Modular**: Diferentes tipos de conteúdo são gerenciados por processadores dedicados (canais de TV, filmes, séries e adultos).
-- **Geração de Arquivos `.strm`**: Cria arquivos `.strm` para cada item de mídia, permitindo fácil integração com servidores de mídia.
+- **Geração de Arquivos `.strm`**: Cria e atualiza arquivos `.strm` para cada item de VOD, permitindo fácil integração com servidores de mídia.
 - **Gerenciamento de Links**: Atualiza links obsoletos armazenados nos diretórios existentes.
 - **Banco de Dados SQLite**: Armazena metadados de mídia em um banco de dados SQLite, permitindo recuperação e organização futura.
 
@@ -50,7 +50,7 @@ Este é um lançamento beta para testes. As buscas retornam grande parte dos con
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/m3u-processor.git
+   git clone https://github.com/liuBsb/m3u-processor.git
    cd m3u-processor
    ```
 
