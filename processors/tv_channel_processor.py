@@ -1,6 +1,6 @@
 import re
 from media_directory import MediaDirectory
-from patterns import m3u_channel_pattern
+from patterns import channel_pattern
 from database import Database
 
 
@@ -11,7 +11,7 @@ class TVChannelProcessor(MediaDirectory):
 
     def _process_channels(self, text):
         # Encontra os canais no texto usando a regex
-        tv_channel_matches = list(m3u_channel_pattern.finditer(text))
+        tv_channel_matches = list(channel_pattern.finditer(text))
 
         if not tv_channel_matches:
             print("Nenhum canal encontrado para processar.")

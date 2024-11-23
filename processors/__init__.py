@@ -1,0 +1,4 @@
+from processors.movie_processor import MovieProcessor
+from processors.series_processor import SeriesProcessor
+from processors.adult_processor import AdultProcessor
+from processors.tv_channel_processor import TVChannelProcessor
