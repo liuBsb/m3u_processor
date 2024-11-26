@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
-import os
 import argparse
+import os
+
 from database import Database
 from processors.processor_factory import ProcessorFactory
+from utils.config import Config
+
+
 def main():
     # Configuração de argumentos da linha de comando
     parser = argparse.ArgumentParser(description="Processador de arquivos M3U")
     parser.add_argument("m3u_file", type=str, help="Arquivo M3U a ser processado")
     parser.add_argument(
-        "-s",
-        "--output-dir",
+        "-e",
+        "--environment",
         type=str,
-        default=os.getcwd(),
-        help="Diretório de saída (padrão: diretório atual)",
+        default="development",
+        choices=["development", "production", "test"],
+        help="Ambiente de execução (padrão: development)",
     )
     parser.add_argument(
         "-t",
@@ -25,8 +30,10 @@ def main():
 
     args = parser.parse_args()
 
-    # Inicializa o banco de dados
-    db = Database()
+    # Inicializa o banco de dados com base no ambiente
+    config = Config()
+    db_path = config.get_database_path(environment=args.environment)
+    db = Database(db_path)
     db.initialize()
 
     try:
@@ -38,7 +45,6 @@ def main():
         if len(args.media_types) == 1:
             processor = ProcessorFactory.create_processor(
                 m3u_file=args.m3u_file,
-                output_dir=args.output_dir,
                 media_type=args.media_types[0],
             )
             processor.process(m3u_text)
