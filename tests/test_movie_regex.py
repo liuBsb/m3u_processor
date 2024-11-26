@@ -1,6 +1,5 @@
 import pytest
 from patterns import movie_pattern
-# Dados de teste
 
 
 @pytest.mark.parametrize(
@@ -40,7 +39,7 @@ http://dns.aipim.info:80/AdautoViseli/g4ue5j5h/194195
         ),
     ],
 )
-def test_movie_pattern(input_text, expected_matches):
+def test_regex_movie_pattern(input_text, expected_matches):
     """
     Testa se a regex captura corretamente filmes e ignora canais ao vivo.
     """
